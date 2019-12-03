@@ -5,10 +5,10 @@
 
 if [ $# -ne 2 ];
     then
-    echo "Usage: ./gpu-ssh.sh <username> <server_ip>"
+    echo "Usage: ./ssh-tunnel.sh <username> <server_ip>"
 elif [ $1 == -h ];
     then
-    echo "Usage: ./gpu-ssh.sh <username> <server_ip>"
+    echo "Usage: ./ssh-tunnel.sh <username> <server_ip>"
 else
     ssh -L 8000:localhost:8888 $1"@"$2
 fi
