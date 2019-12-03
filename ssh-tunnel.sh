@@ -13,4 +13,5 @@ else
     ssh -L 8000:localhost:8888 $1"@"$2
 fi
 
-#ssh -L 8000:localhost:8888 your_name@your_server_ip
+# this is what is should look like
+# ssh -L 8000:localhost:8888 your_name@your_server_ip
