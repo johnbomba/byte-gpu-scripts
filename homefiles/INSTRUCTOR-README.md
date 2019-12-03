@@ -19,12 +19,13 @@ Creating home directory `/home/username' ...
 Copying files from `/etc/skel' ...
 New password:
 Retype new password:
-passwd: password updated successfully
+passwd: 
+password updated successfully
 ```
 
 #### step 3 - set account expiration: 
 ```
-$ set_exp
+$ set_exp.sh
 ```
 ```
 Output 
@@ -53,27 +54,29 @@ this will copy the nessisary files to the students home dir
 #### step 4 - have the student scp the files in thier home dir to their local machine 
 
 ```
-$ scp -r username@from_host:/username/home  /local/directory/ 
+$ scp -r USERNAME@from_host:/username/home/* /local/directory/ 
 ```
 
 
 ## BYTE GPU STUDENT USAGE:
 
+#### Step 0 - scp the readme and script:
+```
+scp -r USERNAME@192.168.1.200:~/* /local/directory/
+```
+
 #### Step 1 - set up the script: 
-after downloading the ssh-tunnel.sh script from an instructor
+after downloading the ssh-tunnel.sh script:
 ```
 $ chmod 755 ssh-tunnel.sh
 ```
 
-#### Step 2 - run the script:
-```
-$ ssh-tunnel.sh username ip_address
-```
-the script takes 2 arguments a username and the ip of the gpu-machine
-the ip should be 192.168.1.200 but that could change under certain circumstances
+#### step 2 - clone your git repo and transfer your data set:
 
-#### step 3 - clone your git repo and transfer your data set:
+on the remote computer
+```
 $ git clone repository_name 
+```
 
 to copy your data set from your local computer use scp 
 
@@ -86,6 +89,14 @@ Copy directory from local host to a remote hos SCP example:
 ```
 $ scp -r /local/directory/ username@to_host:/remote/directory/
 ```
+
+#### Step 3 - run the script:
+```
+$ ssh-tunnel.sh username ip_address
+```
+the script takes 2 arguments a username and the ip of the gpu-machine
+the ip should be 192.168.1.200 but that could change under certain circumstances
+
 
 #### step 4 - start jupyter notebook: 
 ```
