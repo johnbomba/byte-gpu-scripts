@@ -1,3 +1,5 @@
+echo 'step 0:'
+echo -e 'Read the INSTRUCTOR-README.md\n'
 echo 'STEP 1:'
 echo -e 'adduser <username>\n'
 echo 'STEP 2:'
